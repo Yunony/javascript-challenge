@@ -6,8 +6,29 @@ body {
 
 .error-message {
     color: #F00;
+    display: none;
 }
 
 form input[name='occupationOther'] {
     display: none;
 }
+
+/*
+If any of the fields do not contain valid values (including the occupationOther 
+when the value of occupation is set to 'other'), you should indicate that these are required 
+by adding a 1 pixel solid red (#FF0000 in hex)
+*/
+
+.error {
+	border: 1px solid #FF0000;
+} 
+
+.required-field:after {
+    content: ' *';
+    color: red;
+}
+
+.invalid-field {
+    border: 1px solid #FF0000;
+}
+
